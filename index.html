@@ -20,12 +20,12 @@
 
         body {
             height: 100vh;
-            width: 100%;
-            margin-top: 10px;
-            margin-left: 130px;
+            width: calc(100% - 110px); /* Adjusted width */
+            margin-top: 10px; /* Removed margin */
             background-image: url("/img/background.png");
             background-position: center;
             background-size: cover;
+            position: relative; /* Added position relative */
         }
 
         .sidebar {
@@ -39,7 +39,7 @@
             flex-direction: column;
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(17px);
-            --webkit-backdrop-filter: blur(17px);
+            -webkit-backdrop-filter: blur(17px);
             border-right: 1px solid rgba(255, 255, 255, 0.7);
             transition: width 0.3s ease;
 
@@ -149,8 +149,23 @@
 
         .header {
             display: flex;
-            justify-content: center;
-            width: calc(100vw - 130px);
+            flex-direction: column; /* Stack the title and subtitle */
+            align-items: center; /* Center align the content */
+            width: calc(100vw - 110px); /* Adjusted width */
+            margin-left: 110px; /* Added margin to push it to the right */
+            padding: 20px; /* Added padding for spacing */
+            color: #333; /* Text color */
+
+            h2 {
+                font-size: 2rem; /* Larger font size for the title */
+                margin-bottom: 10px; /* Space between title and subtitle */
+            }
+
+            h4 {
+                font-size: 1rem; /* Font size for the subtitle */
+                text-align: center; /* Center align the subtitle */
+                max-width: 600px; /* Limit the width of the subtitle */
+            }   
         }
     </style>
 </head>
@@ -173,7 +188,8 @@
     </aside>
 
     <div class="header">
-        <h2>Home Page</h2>
+        <h2>Thomas Bryant</h2>
+        <h4>Coding enthusiast with a passion for turning ideas into reality. Always learning, always creating.</h4>
     </div>
 </body>
 </html>

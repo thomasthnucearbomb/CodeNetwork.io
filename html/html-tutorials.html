@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>HTML Tutorials | CodeNetwork.io</title>
+        <link rel="icon" type="image/x-icon" href="/img/logo.png">
         <style>
             /* Importing Google font - Poppins */
             @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
@@ -18,12 +19,10 @@
 
             body {
                 height: 100vh;
-                width: 100%;
-                margin-top: 10px;
-                margin-left: 130px;
-                background-image: url("/img/background.png");
-                background-position: center;
-                background-size: cover;
+                width: calc(100% - 110px); /* Adjusted width */
+                margin-top: 10px; /* Removed margin */
+                background: linear-gradient(45deg , hsl(0, 100%, 50%), hsl(120, 100%, 25%), hsl(240, 100%, 50%), hsl(60, 100%, 50%), hsl(348, 83%, 47%)) 0 0 / 1000% no-repeat;
+                animation: animate 5s infinite;
             }
 
             .sidebar {
@@ -35,9 +34,9 @@
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                background: rgba(255, 255, 255, 0.2);
+                background: rgba(255, 255, 255, 0.1);
                 backdrop-filter: blur(17px);
-                --webkit-backdrop-filter: blur(17px);
+                -webkit-backdrop-filter: blur(17px);
                 border-right: 1px solid rgba(255, 255, 255, 0.7);
                 transition: width 0.3s ease;
 
@@ -144,6 +143,88 @@
                     }
                 }
             }
+
+            .header {
+                display: flex;
+                flex-direction: column; /* Stack the title and subtitle */
+                align-items: center; /* Center align the content */
+                width: calc(100vw - 110px); /* Adjusted width */
+                margin-left: 110px; /* Added margin to push it to the right */
+                padding: 20px; /* Added padding for spacing */
+                color: #333; /* Text color */
+    
+                h2 {
+                    font-size: 2rem; /* Larger font size for the title */
+                    margin-bottom: 10px; /* Space between title and subtitle */
+                }
+    
+                h4 {
+                    font-size: 1rem; /* Font size for the subtitle */
+                    text-align: center; /* Center align the subtitle */
+                    max-width: 600px; /* Limit the width of the subtitle */
+                }   
+            }
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                width: calc(100vw - 110px);
+                margin-left: 110px;
+                padding: 20px;
+                color: var(--header-color);
+
+                h2 {
+                    font-size: 1.5rem; /* Adjusted font size for section headings */
+                    margin-bottom: 10px; /* Space between heading and text */
+                }
+        
+                p {
+                    font-size: 14px; /* Font size for the text */
+                    max-width: 600px; /* Limit the width of the text */
+                    line-height: 1.6; /* Improved line height for readability */
+                    margin-bottom: 20px; /* Space between paragraphs */
+                }
+        
+                ul {
+                    list-style-type: disc; /* Use bullet points for lists */
+                    margin-left: 20px; /* Indent the list */
+                    padding: 10px 0; /* Add padding around the list */
+                }
+        
+                li {
+                    font-size: 14px; /* Font size for list items */
+                    max-width: 600px; /* Limit the width of the text */
+                    line-height: 1.6; /* Improved line height for readability */
+                    margin-bottom: 5px; /* Space between list items */
+                }
+
+                .code-text {
+                    margin-bottom: 0px;
+                }
+
+                .code {
+                    background-color: #f9f9f9;
+                    padding: 20px;
+                    border: 2px solid #ddd;
+                    border-radius: 4px;
+
+                    .tagname {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @keyframes animate {
+                0% {
+                    background-position: 0 30%, 0 0;
+                }
+                50% {
+                    background-position: 100% 70%, 0 0;
+                }
+                100% {
+                    background-position: 0 30%, 0 0;
+                }
+            }
         </style>
     </head>
     <body>
@@ -159,13 +240,38 @@
                 </li>
                 <li>
                     <i class='bx bx-bug icon' ></i>
-                    <a href="/html/html-tutorials.html">HTML Tutorials</a>
+                    <a href="/html/html-tutorials.html">HTML Tutorial</a>
                 </li>
             </ul>
         </aside>
 
         <div class="header">
-            <h2>HTML Tutorials</h2>
+            <h2>HTML Tutorial</h2>
+        </div>
+
+        <div class="content">
+            <h2>HTML Introduction</h2>
+            <p>HTML stands for hyper-text markup language. It is the standard coding language for 
+                websites. HTML uses tags that represent different parts of a website. These 
+                tags also tell the browser how to display content. For 
+                example, the "&ltp&gt" tag is a paragraph element.</p>
+            <br>
+
+            <h2>Basic HTML Elements</h2>
+            <ul>
+                <li>The <code>&lt;!DOCTYPE html&gt;</code> declaration defines that this document is an HTML5 document.</li>
+                <li>The <code>&lt;html&gt;</code> element is the root element of an HTML page.</li>
+                <li>The <code>&lt;head&gt;</code> element contains meta information about the HTML page.</li>
+                <li>The <code>&lt;title&gt;</code> element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab).</li>
+                <li>The <code>&lt;body&gt;</code> element defines the document's body and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.</li>
+                <li>The <code>&lt;h1&gt;</code> element defines a large heading.</li>
+                <li>The <code>&lt;p&gt;</code> element defines a paragraph.</li>
+            </ul>
+
+            <h2>Element Structure</h2>
+            <span class="code-text">HTML elements are structured like so:</span>
+            <pre class="code">&lt;<span class="tagname">tagname</span>&gt;Content goes here&lt;/<span class="tagname">tagname</span>&gt;</pre>
+            <p>Some tags (E.g. &lt;br&gt;) are self-closing which means they don't have a second tag</p>
         </div>
     </body>
 </html>
